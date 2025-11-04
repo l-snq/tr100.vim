@@ -28,6 +28,8 @@ if exists("syntax_on")
   syntax reset
 endif
 
+let g:airline#themes#tr100#palette = {}
+
 let g:colors_name = "tr100"
 
 " Color definitions
