@@ -28,6 +28,21 @@ if exists("syntax_on")
   syntax reset
 endif
 
+" Airline themes are specified as a global viml dictionary using the above
+" sections, modes and overrides as keys to the dictionary.  The name of the
+" dictionary is significant and should be specified as:
+"   * g:airline#themes#<theme_name>#palette
+" where <theme_name> is substituted for the name of the theme.vim file where the
+" theme definition resides.  Airline themes should reside somewhere on the
+" 'runtimepath' where it will be loaded at vim startup, for example:
+"   * autoload/airline/themes/theme_name.vim
+
+let s:airline_a_normal   = [ '#FF9900' , '#0A0A0A' , 17  , 190 ]
+let s:airline_b_normal   = [ '#FF9900' , '#0A0A0A' , 255 , 238 ]
+let s:airline_c_normal   = [ '#0A0A0A' , '#FF9900' , 85  , 234 ]
+
+let g:airline#themes#tr100#palette.normal = airline#themes#generate_color_map(s:airline_a_normal, s:airline_b_normal, s:airline_c_normal)
+
 let g:airline#themes#tr100#palette = {}
 
 let g:colors_name = "tr100"
